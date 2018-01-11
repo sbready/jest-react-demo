@@ -3,8 +3,10 @@ const express = require('express'),
       cars = require('./carData.json'),
       port = process.env.PORT || 3005
       app = express();
+      cors = require('cors');
 
 app.use(bodyParser.json())
+app.use(cors())
 
 app.get('/api/cars', (req, res) => {
     res.status(200).send(cars)
